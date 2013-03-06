@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %plugin.name
+Bundle-SymbolicName: com.applica.birt.rest.ui; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: com.applica.birt.rest.ui.Activator
+Bundle-Vendor: Applica
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.datatools.connectivity.oda.design.ui;bundle-version="[3.2.0,4.0.0)",
+ com.applica.birt.rest
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ lib/jackson-all-1.9.6.jar
