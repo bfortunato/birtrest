@@ -22,7 +22,7 @@ public class JsonResultSet implements IResultSet {
 	private int index = -1;
 	private int size = 0;
 	private JsonNode row;
-	private int maxRows;
+	private int maxRows = 10000;
 	
 	public JsonResultSet(ArrayNode root) {
 		this.root = root;
@@ -236,9 +236,10 @@ public class JsonResultSet implements IResultSet {
 	@Override
 	public boolean next() throws OdaException {
 		int max = size;
-		if(maxRows != -1) {
+		if(maxRows != -1 && maxRows != 0) {
 			max = Math.min(maxRows, size);
 		}
+		
 		if(index < max) {
 			row = root.get(++index);
 		}
